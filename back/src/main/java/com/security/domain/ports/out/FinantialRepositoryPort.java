@@ -10,5 +10,6 @@ public interface FinantialRepositoryPort {
     Optional<Finantial> findById(Long id);
     List<Finantial> findAll();
     Optional<Finantial> update(Finantial finantial);
+    boolean deleteAll();
     boolean deleteById(Long id);
 }

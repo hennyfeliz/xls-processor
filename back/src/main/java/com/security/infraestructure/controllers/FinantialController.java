@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -166,5 +163,10 @@ public class FinantialController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteFinantialById(@PathVariable Long id){
         return (finantialService.deleteFinantial(id)) ? ResponseEntity.ok("Finantial deleted.") : new ResponseEntity<>("Finantial not found", HttpStatus.NOT_FOUND);
+    }
+
+    @DeleteMapping("/truncate")
+    public ResponseEntity<String> truncate(){
+        return (finantialService.deleteAll()) ? ResponseEntity.ok("Finantial deleted.") : new ResponseEntity<>("Finantial not found", HttpStatus.NOT_FOUND);
     }
 }

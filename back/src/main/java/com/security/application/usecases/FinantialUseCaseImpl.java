@@ -39,5 +39,10 @@ public class FinantialUseCaseImpl implements FinantialUseCase {
     public boolean deleteFinantial(Long id) {
         return finantialRepositoryPort.deleteById(id);
     }
+
+    @Override
+    public boolean deleteAll() {
+        return finantialRepositoryPort.deleteAll();
+    }
 }
 

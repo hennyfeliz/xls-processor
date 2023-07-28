@@ -38,4 +38,9 @@ public class FinantialService implements FinantialUseCase {
     public boolean deleteFinantial(Long id) {
         return finantialUseCase.deleteFinantial(id);
     }
+
+    @Override
+    public boolean deleteAll() {
+        return finantialUseCase.deleteAll();
+    }
 }

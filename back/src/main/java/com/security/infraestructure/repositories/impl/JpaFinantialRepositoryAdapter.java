@@ -50,6 +50,12 @@ public class JpaFinantialRepositoryAdapter implements FinantialRepositoryPort {
     }
 
     @Override
+    public boolean deleteAll() {
+        jpaFinantialRepository.deleteAll();
+        return true;
+    }
+
+    @Override
     public boolean deleteById(Long id) {
         if(jpaFinantialRepository.existsById(id)){
             jpaFinantialRepository.deleteById(id);

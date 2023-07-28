@@ -11,4 +11,5 @@ public interface FinantialUseCase {
     List<Finantial> getAllFinantials();
     Optional<Finantial> updateFinantial(Long id, Finantial finantial);
     boolean deleteFinantial(Long id);
+    boolean deleteAll();
 }
