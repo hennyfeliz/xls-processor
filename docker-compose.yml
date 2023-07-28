@@ -1,0 +1,31 @@
+version: '3'
+services:
+  react-app:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - 5173:5173
+  spring-boot-app:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      - spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://172.30.80.1:1433;databaseName=xls;encrypt=false;
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=feferrefe2020
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: mssql-server
+    restart: unless-stopped
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=feferrefe2020
+      - MSSQL_PID=Express
+    ports:
+      - 1433:1433
+    volumes:
+      - C:\App\Databases:/var/opt/mssql
