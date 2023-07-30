@@ -60,9 +60,11 @@ public class FinantialController {
             ExcelMapper<Finantial> excelMapper = new ExcelMapper<>(Finantial.class);
             finantials = excelMapper.mapRows(sheet);
 
-            for(Finantial finantial : finantials){
-                finantialService.createFinantial(finantial);
-            }
+            //for(Finantial finantial : finantials){
+            //    finantialService.createFinantial(finantial);
+            //}
+            //finantials.forEach(finantialService::createFinantial);
+            finantialService.createAllFinantianls(finantials);
 
             // Aquí tienes la lista de objetos Finantial creados a partir del archivo Excel
             return new ResponseEntity<>(finantials, HttpStatus.OK);

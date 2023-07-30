@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface FinantialRepositoryPort {
     Finantial save(Finantial finantial);
+    void saveAll(List<Finantial> finantials);
     Optional<Finantial> findById(Long id);
     List<Finantial> findAll();
     Optional<Finantial> update(Finantial finantial);

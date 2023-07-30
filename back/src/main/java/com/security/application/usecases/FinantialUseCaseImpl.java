@@ -31,6 +31,11 @@ public class FinantialUseCaseImpl implements FinantialUseCase {
     }
 
     @Override
+    public void createAllFinantianls(List<Finantial> finantials) {
+        finantialRepositoryPort.saveAll(finantials);
+    }
+
+    @Override
     public Optional<Finantial> updateFinantial(Long id, Finantial finantial) {
         return finantialRepositoryPort.update(finantial);
     }

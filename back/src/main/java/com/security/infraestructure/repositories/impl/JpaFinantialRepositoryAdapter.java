@@ -27,6 +27,12 @@ public class JpaFinantialRepositoryAdapter implements FinantialRepositoryPort {
     }
 
     @Override
+    public void saveAll(List<Finantial> finantials) {
+        List<FinantialEntity> finantialss = finantials.stream().map(FinantialEntity::fromDomainModel).toList();
+        jpaFinantialRepository.saveAll(finantialss);
+    }
+
+    @Override
     public Optional<Finantial> findById(Long id) {
         return jpaFinantialRepository.findById(id)
                 .map(FinantialEntity::toDomainModel);

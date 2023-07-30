@@ -30,6 +30,11 @@ public class FinantialService implements FinantialUseCase {
     }
 
     @Override
+    public void createAllFinantianls(List<Finantial> finantials) {
+        finantialUseCase.createAllFinantianls(finantials);
+    }
+
+    @Override
     public Optional<Finantial> updateFinantial(Long id, Finantial finantial) {
         return finantialUseCase.updateFinantial(id, finantial);
     }

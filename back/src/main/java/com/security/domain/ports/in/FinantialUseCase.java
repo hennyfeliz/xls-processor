@@ -9,6 +9,7 @@ public interface FinantialUseCase {
     Finantial createFinantial(Finantial finantial);
     Optional<Finantial> getFinantialById(Long id);
     List<Finantial> getAllFinantials();
+    void createAllFinantianls(List<Finantial> finantials);
     Optional<Finantial> updateFinantial(Long id, Finantial finantial);
     boolean deleteFinantial(Long id);
     boolean deleteAll();
