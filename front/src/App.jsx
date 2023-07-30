@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, redirect } from "react-router-dom";
 import { Routes, Route, Link } from "react-router-dom";
 import SendFileRest from './components/SendFileRest'
 import ListElements from './components/ListElements';
@@ -16,6 +16,7 @@ function App() {
     .then(() => {
       setSuccess(true);
       setLoading(false);
+      redirect("/list")
     })
     .catch((error) => {
       console.log(error);

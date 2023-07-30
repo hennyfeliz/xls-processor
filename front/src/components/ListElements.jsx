@@ -20,6 +20,9 @@ const ListElements = () => {
       });
   }, [])
 
+  const formatCurrency = (currency) => {
+    return currency.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+  }
 
 
 
@@ -65,8 +68,8 @@ const ListElements = () => {
                   <div className="table-data">{item.discounts}</div>
                   <div className="table-data">{item.sales}</div> */}
 
-                  <div className="table-data">{item.cogs}</div>
-                  <div className="table-data">{item.profit}</div>
+                  <div className="table-data">{formatCurrency(item.cogs)}</div>
+                  <div className="table-data">{formatCurrency(item.profit)}</div>
                   <div className="table-data">{item.processDate}</div>
                   <div className="table-data">{item.monthNumber}</div>
                   <div className="table-data">{item.monthName}</div>
